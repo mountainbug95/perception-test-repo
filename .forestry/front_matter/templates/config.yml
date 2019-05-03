@@ -1,0 +1,153 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: text
+    name: baseurl
+    label: Base URL
+    description: Serve the website from the given base URL
+    hidden: true
+  - type: text
+    name: permalink
+    label: Permalink
+    description: 'The output path for your pages, posts, or collections.'
+    hidden: true
+    default: '/posts/:slug:output_ext'
+  - type: field_group
+    name: footer
+    label: Footer Configuration
+    fields:
+      - type: field_group
+        name: social
+        label: Social Section
+        description: The social media icons displayed in the site footer
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: Displays the social section in the site footer
+            default: false
+          - type: field_group_list
+            name: social_methods
+            label: Social Icons
+            description: A list of social media icons
+            config:
+              labelField: title
+            fields:
+              - type: text
+                name: title
+                label: Icon Title
+                description: >-
+                  Used to identify the icon . in the CMS (not used in the
+                  template)
+                config:
+                  required: true
+              - type: text
+                name: icon
+                label: Font Awesome Icon
+                description: 'Any Font Awesome icon - ''fab fa-twitter'', ''fas fa-comment''...'
+                config:
+                  required: true
+              - type: text
+                name: link
+                label: Icon Link
+  - type: field_group
+    name: bottom
+    label: Footer Bottom
+    description: The bottom part of the site footer
+    fields:
+      - type: field_group
+        name: blurb
+        label: Blurb Section
+        description: The Author blurb displayed in the bottom part of the footer
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: Displays the blurb section
+            default: false
+          - type: file
+            name: img
+            label: Blurb Image
+            description: The image displayed next to . the blurb content
+          - type: field_group
+            name: description
+            label: Blurb Content
+            description: The content displayed in the blurb
+            fields:
+              - type: text
+                name: heading
+                label: Blurb Heading
+                description: The bold text displayed at the top . of the blurb
+              - type: text
+                name: subheading
+                label: Blurb Subheading
+                description: The smaller text displayed below the blurb heading
+              - type: textarea
+                name: content
+                label: Blurb Content
+                description: The content displayed below the blurb subheading
+                config:
+                  wysiwyg: true
+                  schema:
+                    format: markdown
+      - type: field_group
+        name: copyright
+        label: Copyright
+        description: The copyright displayed at the bottom of the site footer
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: Displays the copyright section at the bottomof the page footer.
+            default: false
+          - type: text
+            name: text
+            label: Copyright Text
+            description: The text displayed in the footer copyright
+  - type: field_group
+    name: sass
+    label: Sass
+    hidden: true
+    fields:
+      - type: number
+        name: indentWidth
+        label: Indent Width
+        description: >-
+          Used to determine the number of spaces or tabs to be used for
+          indentation.
+        default: 4
+      - type: select
+        name: style
+        label: Output Style
+        description: Determines the output format of the final CSS style.
+        default: nested
+        config:
+          source:
+            type: custom
+          options:
+            - nested
+            - expanded
+            - compact
+            - compressed
+      - type: number
+        name: precision
+        label: Precision
+        description: Used to determine how many digits after the decimal will be allowed.
+        default: 10
+  - type: list
+    name: plugins
+    label: Plugins
+    hidden: true
+  - type: list
+    name: exclude
+    label: Exclude
+    description: Exclude directories and/or files from the conversion.
+    hidden: true

@@ -1,0 +1,70 @@
+---
+label: Post
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Post Title
+    config:
+      required: true
+  - type: text
+    name: subtitle
+    label: Post Subtitle
+    description: The text displayed below the post title in the hero
+  - type: file
+    name: thumbnail
+    label: Thumbnail Image
+    description: The image displayed in the post thumbnail
+  - type: datetime
+    name: date
+    label: post date
+    description: The date the post was created
+    config:
+      required: true
+  - type: textarea
+    name: excerpt
+    label: Post Excerpt
+    description: The excerptdisplayedin . thepost thumbnail
+    config:
+      required: true
+  - type: field_group
+    name: hero
+    label: Post Hero
+    description: The hero displayed at the top of the post
+    fields:
+      - type: include
+        name: include_genericHero
+        label: Generic Hero
+        template: genericHero
+  - type: boolean
+    name: display_bottom_tags
+    label: Display Bottom Tags
+    description: Displays the post tags below the page content
+    default: false
+  - type: field_group_list
+    name: tagsList
+    label: Tags
+    description: A liost of tags associated with the post
+    config:
+      labelField: name
+    fields:
+      - type: text
+        name: name
+        label: Tag Name
+        config:
+          required: true
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - _posts/2018-03-11-post01.md
+  - _posts/2018-03-12-post02.md
+  - _posts/2018-03-13-post03.md
+  - _posts/2018-03-14-post04.md
+  - _posts/2018-03-15-post05.md
+  - _posts/2018-03-16-post06.md
+  - _posts/2018-03-17-post07.md

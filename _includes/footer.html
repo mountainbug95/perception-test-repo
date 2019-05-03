@@ -1,0 +1,51 @@
+<!-- FOOTER -->
+<div class="footer">
+    {% if site.footer.social.enabled %}
+        <ul class="social">
+            {% for method in site.footer.social.social_methods %}
+                <li>
+                    <a href="{{ method.link }}">
+                        <i class="{{ method.icon }}"></i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elsif site.data.social.links %}
+        <ul class="social">
+            {% for method in site.data.social.links %}
+                <li>
+                    <a href="{{ method.url }}">
+                        <i class="{{ method.icon }}"></i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="bottom">
+        {% if site.footer.bottom.blurb.enabled %}
+            <div class="blurb">
+                {% if site.footer.bottom.blurb.img %}
+                    <img class="blurb-img" src="{{ site.footer.bottom.blurb.img | relative_url }}" alt="" />
+                {% endif %}
+                <div class="blurb-content">
+                    {% if site.footer.bottom.blurb.description.heading %}
+                        <h2 class="inversed">{{ site.footer.bottom.blurb.description.heading }}</h2>
+                    {% elsif site.data.author.name %}
+                        <h2 class="inversed">{{ site.data.author.name }}</h2>
+                    {% endif %}
+                    {% if site.footer.bottom.blurb.description.subheading %}
+                        <h3>{{ site.footer.bottom.blurb.description.subheading }}</h3>
+                    {% elsif site.data.author.email %}
+                        <h3>{{ site.data.author.email }}</h3>
+                    {% endif %}
+                    {{ site.footer.bottom.blurb.description.content | markdownify }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if site.footer.bottom.copyright.enabled %}
+            <span class="copyright">{{ site.footer.bottom.copyright.text }}</span>
+        {% endif %}
+    </div>
+</div>

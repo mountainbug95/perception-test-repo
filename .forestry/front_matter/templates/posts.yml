@@ -1,0 +1,33 @@
+---
+label: Posts
+hide_body: true
+is_partial: true
+fields:
+  - type: text
+    name: type
+    label: Type
+    description: The type identifier of this object inside block lists
+    hidden: true
+    default: posts
+    config:
+      required: true
+  - type: text
+    name: title
+    label: Section Title
+    config:
+      required: true
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    config:
+      required: true
+    default: posts.html
+  - type: text
+    name: type
+    label: Reference Type Name
+    description: Name of the object model if it was referenced
+    hidden: true
+    default: posts
+    config:
+      required: true

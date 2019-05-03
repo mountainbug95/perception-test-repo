@@ -1,0 +1,31 @@
+---
+label: Generic Hero
+hide_body: true
+is_partial: true
+fields:
+  - type: boolean
+    name: display_date
+    label: Display Date
+    description: Displays the date in the page hero
+    default: false
+  - type: file
+    name: img
+    label: HeroImage
+    description: The image displayed at the top of the page hero
+  - type: boolean
+    name: display_tags
+    label: Display Tags
+    description: Displays the page tags at the bottom of the hero
+    default: false
+  - type: field_group
+    name: background_img
+    label: Background Image
+    description: The image displayed as the background opf the page hero
+    fields:
+      - type: boolean
+        name: display
+        label: Display Image
+        description: Displays the hero background image
+      - type: file
+        name: path
+        label: Image

@@ -1,0 +1,35 @@
+<!-- POSTS -->
+<div  class="posts">
+    <ul class="posts-list">
+        {% assign arr = include.site.posts | sort: 'date' | reverse %}
+        {% for post in arr %}
+            {% if forloop.first %}
+                <li class="first-post">
+                    <div class="first-post-content{% if post.thumbnail %} has-img{% endif %}">
+                        <h3 class="post-date">{{ post.date | date: '%b %d %Y' }}</h3>
+                        {% if post.thumbnail %}
+                            <img class="first-img" src="{{ post.thumbnail | relative_url }}" alt="" />
+                        {% endif %}
+                        <h1 class="first-post-heading inversed">{{ post.title }}</h1>
+                        <div class="excerpt inversed">
+                            {{ post.excerpt | newline_to_br }}..<span><a href="{{ post.url | relative_url }}">Read more →</a></span>
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li class="post">
+                    <div class="post-header{% if post.thumbnail %} has-img{% endif %}">
+                        <h3 class="post-date">{{ post.date | date: '%b %d %Y' }}</h3>
+                        {% if post.thumbnail %}
+                            <img class="post-img" src="{{ post.thumbnail | relative_url }}" alt="" />
+                        {% endif %}
+                        <h1 class="post-heading{% if post.thumbnail %} inversed{% endif %}">{{ post.title }}</h1>
+                    </div>
+                    <div class="excerpt">
+                        {{ post.excerpt | newline_to_br }}..<span><a href="{{ post.url | relative_url }}">Read more →</a></span>
+                    </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

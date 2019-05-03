@@ -1,0 +1,60 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: hero
+    label: Hero
+    description: The hero displayed at the top of the page
+    fields:
+      - type: file
+        name: img
+        label: Hero Image
+        description: The image displayed at the top of the hero
+      - type: textarea
+        name: description
+        label: Hero Description
+        description: The text displayed below thew hero image
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: field_group
+        name: subdescription
+        label: Hero Subdescription
+        description: The subtitles displayed below the hero description
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: Displays the header subdescription
+            default: false
+          - type: text
+            name: heading
+            label: Subdescription Heading
+            description: The bold first line of text displayed in the hero subdescription
+          - type: text
+            name: subheading
+            label: Subdescription Subheading
+            description: The text displayed below the subdescription heading
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - posts
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

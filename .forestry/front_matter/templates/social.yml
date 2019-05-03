@@ -1,0 +1,27 @@
+---
+label: Social Links
+hide_body: true
+is_partial: false
+fields:
+  - type: field_group_list
+    name: links
+    label: Social Icons
+    description: A list of social icons to be displayed in the site footer
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Icon Title
+        description: Used to identify the icon . in the CMS (not used in the template)
+        config:
+          required: true
+      - type: text
+        name: icon
+        label: Font Awesome Icon
+        description: 'Any Font Awesome icon - ''fab fa-twitter'', ''fas fa-comment''...'
+        config:
+          required: true
+      - type: text
+        name: url
+        label: Icon Link

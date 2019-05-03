@@ -1,0 +1,27 @@
+---
+label: Basic Page
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: hero
+    label: Page Hero
+    description: The hero displayed at the top of the post
+    fields:
+      - type: include
+        name: include_genericHero
+        label: Generic Hero
+        template: genericHero
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: basic
+    config:
+      required: true
+pages:
+  - about.md

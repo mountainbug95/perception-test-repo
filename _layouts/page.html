@@ -1,0 +1,21 @@
+---
+layout: body
+---
+
+    {% include hero_generic.html %}
+
+    <!--CONTENT-->
+    <div class="content">
+        {{ content }}
+
+        {% if page.display_bottom_tags %}
+            <ul class="bottom-tags">
+                {% for tag in page.tagsList %}
+                    <li class="tag">{{ tag.name }}</li>
+                    {% unless forloop.last %}
+                        <li class="delim"></li>
+                    {% endunless %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>

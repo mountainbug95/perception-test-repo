@@ -1,0 +1,33 @@
+<!-- HERO -->
+<div class="hero">
+    {% if page.hero.img %}
+        <div class="hero-img">
+            <img src="{{ page.hero.img | relative_url }}" alt="" />
+        </div>
+    {% elsif site.data.author.avatar %}
+        <div class="hero-img">
+            <img src="{{ site.data.author.avatar | relative_url }}" alt="" />
+        </div>
+    {% endif %}
+
+    {% if page.hero.description %}
+        <div class="hero-description">
+            {{ page.hero.description | markdownify }}
+        </div>
+    {% endif %}
+
+    {% if page.hero.subdescription.enabled %}
+        <div class="hero-subdescription">
+            {% if page.hero.subdescription.heading %}
+                <h2>{{ page.hero.subdescription.heading }}</h2>
+            {% elsif site.data.author.name %}
+                <h2>{{ site.data.author.name }}</h2>
+            {% endif %}
+            {% if page.hero.subdescription.subheading %}
+                <h3>{{ page.hero.subdescription.subheading }}</h3>
+            {% elsif site.data.author.email %}
+                <h3>{{ site.data.author.email }}</h3>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
