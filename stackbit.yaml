@@ -62,58 +62,58 @@ models:
                       name: link
                       label: Icon Link
                       widget: url
-      - type: object
-        name: bottom
-        label: Footer Bottom
-        description: The bottom part of the site footer
-        fields:
           - type: object
-            name: blurb
-            label: Blurb Section
-            description: The Author blurb displayed in the bottom part of the footer
+            name: bottom
+            label: Footer Bottom
+            description: The bottom part of the site footer
             fields:
-              - type: boolean
-                name: enabled
-                label: Enabled
-                default: false
-                description: Displays the blurb section
-              - type: image
-                name: img
-                label: Blurb Image
-                description: The image displayed next to . the blurb content
               - type: object
-                name: description
-                label: Blurb Content
-                description: The content displayed in the blurb
+                name: blurb
+                label: Blurb Section
+                description: The Author blurb displayed in the bottom part of the footer
                 fields:
-                  - type: string
-                    name: heading
-                    label: Blurb Heading
-                    description: The bold text displayed at the top . of the blurb
-                  - type: string
-                    name: subheading
-                    label: Blurb Subheading
-                    description: The smaller text displayed below the blurb heading
-                  - type: markdown
-                    name: content
+                  - type: boolean
+                    name: enabled
+                    label: Enabled
+                    default: false
+                    description: Displays the blurb section
+                  - type: image
+                    name: img
+                    label: Blurb Image
+                    description: The image displayed next to . the blurb content
+                  - type: object
+                    name: description
                     label: Blurb Content
-                    description: The content displayed below the blurb subheading
-          - type: object
-            name: copyright
-            label: Copyright
-            description: The copyright displayed at the bottom of the site footer
-            fields:
-              - type: boolean
-                name: enabled
-                label: Enabled
-                default: false
-                description: >-
-                  Displays the copyright section at the bottomof the page
-                  footer.
-              - type: string
-                name: text
-                label: Copyright Text
-                description: The text displayed in the footer copyright
+                    description: The content displayed in the blurb
+                    fields:
+                      - type: string
+                        name: heading
+                        label: Blurb Heading
+                        description: The bold text displayed at the top . of the blurb
+                      - type: string
+                        name: subheading
+                        label: Blurb Subheading
+                        description: The smaller text displayed below the blurb heading
+                      - type: markdown
+                        name: content
+                        label: Blurb Content
+                        description: The content displayed below the blurb subheading
+              - type: object
+                name: copyright
+                label: Copyright
+                description: The copyright displayed at the bottom of the site footer
+                fields:
+                  - type: boolean
+                    name: enabled
+                    label: Enabled
+                    default: false
+                    description: >-
+                      Displays the copyright section at the bottomof the page
+                      footer.
+                  - type: string
+                    name: text
+                    label: Copyright Text
+                    description: The text displayed in the footer copyright
       - type: object
         name: sass
         label: Sass

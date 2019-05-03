@@ -58,60 +58,62 @@ fields:
               - type: text
                 name: link
                 label: Icon Link
-  - type: field_group
-    name: bottom
-    label: Footer Bottom
-    description: The bottom part of the site footer
-    fields:
       - type: field_group
-        name: blurb
-        label: Blurb Section
-        description: The Author blurb displayed in the bottom part of the footer
+        name: bottom
+        label: Footer Bottom
+        description: The bottom part of the site footer
         fields:
-          - type: boolean
-            name: enabled
-            label: Enabled
-            description: Displays the blurb section
-            default: false
-          - type: file
-            name: img
-            label: Blurb Image
-            description: The image displayed next to . the blurb content
           - type: field_group
-            name: description
-            label: Blurb Content
-            description: The content displayed in the blurb
+            name: blurb
+            label: Blurb Section
+            description: The Author blurb displayed in the bottom part of the footer
             fields:
-              - type: text
-                name: heading
-                label: Blurb Heading
-                description: The bold text displayed at the top . of the blurb
-              - type: text
-                name: subheading
-                label: Blurb Subheading
-                description: The smaller text displayed below the blurb heading
-              - type: textarea
-                name: content
+              - type: boolean
+                name: enabled
+                label: Enabled
+                description: Displays the blurb section
+                default: false
+              - type: file
+                name: img
+                label: Blurb Image
+                description: The image displayed next to . the blurb content
+              - type: field_group
+                name: description
                 label: Blurb Content
-                description: The content displayed below the blurb subheading
-                config:
-                  wysiwyg: true
-                  schema:
-                    format: markdown
-      - type: field_group
-        name: copyright
-        label: Copyright
-        description: The copyright displayed at the bottom of the site footer
-        fields:
-          - type: boolean
-            name: enabled
-            label: Enabled
-            description: Displays the copyright section at the bottomof the page footer.
-            default: false
-          - type: text
-            name: text
-            label: Copyright Text
-            description: The text displayed in the footer copyright
+                description: The content displayed in the blurb
+                fields:
+                  - type: text
+                    name: heading
+                    label: Blurb Heading
+                    description: The bold text displayed at the top . of the blurb
+                  - type: text
+                    name: subheading
+                    label: Blurb Subheading
+                    description: The smaller text displayed below the blurb heading
+                  - type: textarea
+                    name: content
+                    label: Blurb Content
+                    description: The content displayed below the blurb subheading
+                    config:
+                      wysiwyg: true
+                      schema:
+                        format: markdown
+          - type: field_group
+            name: copyright
+            label: Copyright
+            description: The copyright displayed at the bottom of the site footer
+            fields:
+              - type: boolean
+                name: enabled
+                label: Enabled
+                description: >-
+                  Displays the copyright section at the bottomof the page
+                  footer.
+                default: false
+              - type: text
+                name: text
+                label: Copyright Text
+                description: The text displayed in the footer copyright
   - type: field_group
     name: sass
     label: Sass
