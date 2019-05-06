@@ -1,6 +1,7 @@
 ---
 title: Home
 hero:
+  displayHeaderImg: true
   img: images/person.svg
   description: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

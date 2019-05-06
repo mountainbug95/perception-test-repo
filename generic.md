@@ -5,6 +5,7 @@ subtitle: >-
   sollicitudin nibh sit amet
 hero:
   display_date: false
+  displayHeaderImg: true
   img: images/person.svg
   display_tags: true
   background_img:

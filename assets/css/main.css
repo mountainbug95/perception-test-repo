@@ -319,6 +319,7 @@ h3{
 
 .close-menu{
     text-decoration: none;
+    text-align: center;
     font-family: 'robotoslab-bold';
     font-size: 30px;
     line-height: 70px;
@@ -341,6 +342,10 @@ h3{
 
 .has-img{
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-header.has-img{
+    min-height: 189px;
 }
 
 body{

@@ -27,7 +27,7 @@ sections:
   - type: directory
     path: ''
     match: '**/*.md'
-    exclude: '{_posts/**,README.md,LICENSE.md,index.md,contact.md}'
+    exclude: '{_posts/**,README.md,LICENSE.md,index.md,about.md,contact.md}'
     label: Pages
     create: all
     templates:
@@ -37,12 +37,9 @@ sections:
     create: all
     templates:
       - post
-  - type: directory
-    path: ''
-    match: '**/*.md'
-    exclude: '{README.md,LICENSE.md,index.md,contact.md}'
-    label: Basic Pages
-    create: all
+  - type: document
+    label: Basic Page
+    path: about.md
     templates:
       - basic
   - type: document

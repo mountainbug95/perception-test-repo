@@ -13,6 +13,11 @@ fields:
     label: Hero
     description: The hero displayed at the top of the page
     fields:
+      - type: boolean
+        name: displayHeaderImg
+        label: Display Hero Image
+        description: displays the hero image
+        default: false
       - type: file
         name: img
         label: Hero Image

@@ -3,7 +3,7 @@
 
     {% if page.hero.img or site.data.author.avatar or page.hero.background_img.display %}
         {% unless page.hero.background_img.display %}
-            {% if page.hero.img or site.data.author.avatar %}
+            {% if page.hero.displayHeaderImg %}
                 <hr />
             {% endif %}
         {% endunless %}
@@ -13,10 +13,12 @@
                 <img class="hero-bg-img" src="{{ page.hero.background_img.path | relative_url }}" alt="" />
             </div>
         {% endif %}
-        {% if page.hero.img or site.data.author.avatar %}
-            <div class="hero-img img-smaller">
-                <img src="{% if page.hero.img %}{{ page.hero.img | relative_url }}{% else %}{{ site.data.author.avatar | relative_url }}{% endif %}" alt="" />
-            </div>
+        {% if page.hero.displayHeaderImg %}
+            {% if page.hero.img or site.data.author.avatar %}
+                <div class="hero-img img-smaller">
+                    <img src="{% if page.hero.img %}{{ page.hero.img | relative_url }}{% else %}{{ site.data.author.avatar | relative_url }}{% endif %}" alt="" />
+                </div>
+            {% endif %}
         {% endif %}
     {% endif %}
 

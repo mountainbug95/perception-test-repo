@@ -2,6 +2,7 @@
     box-sizing: border-box;
     text-align: center;
     overflow-y: hidden;
+    overflow-x: visible;
     max-width: 48%;
     margin-left: auto;
     margin-right: auto;
@@ -26,8 +27,16 @@
 .hero hr{
     display: inline-block;
     min-width: 76.5vw;;
-    position: absolute;
+    position: relative;
     top: 60px;
+    z-index: -1;
+}
+
+.hr-home{
+    display: inline-block;
+    min-width: 76.5vw;;
+    position: absolute;
+    top: 170px;
     z-index: -1;
 }
 
@@ -121,6 +130,9 @@
 @media screen and (max-width: 800px){
     .hero{
         min-width: 100%;
+    }
+    .hr-home{
+        top: 130px;
     }
 
     .hero-heading{

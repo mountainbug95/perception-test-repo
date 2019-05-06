@@ -1,13 +1,18 @@
 <!-- HERO -->
+{% if page.hero.displayHeaderImg %}
+    <hr class="hr-home" />
+{% endif %}
 <div class="hero">
-    {% if page.hero.img %}
-        <div class="hero-img">
-            <img src="{{ page.hero.img | relative_url }}" alt="" />
-        </div>
-    {% elsif site.data.author.avatar %}
-        <div class="hero-img">
-            <img src="{{ site.data.author.avatar | relative_url }}" alt="" />
-        </div>
+    {% if page.hero.displayHeaderImg %}
+        {% if page.hero.img %}
+            <div class="hero-img">
+                <img src="{{ page.hero.img | relative_url }}" alt="" />
+            </div>
+        {% elsif site.data.author.avatar %}
+            <div class="hero-img">
+                <img src="{{ site.data.author.avatar | relative_url }}" alt="" />
+            </div>
+        {% endif %}
     {% endif %}
 
     {% if page.hero.description %}

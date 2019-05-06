@@ -1,6 +1,7 @@
 ---
 title: About
 hero:
+  displayHeaderImg: true
   img: images/person.svg
 menus:
   main:
