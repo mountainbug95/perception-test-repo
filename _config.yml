@@ -20,6 +20,7 @@ footer:
   bottom:
     blurb:
       enabled: true
+      displayBlurbImg: true
       img: images/person.svg
       description:
         heading: Anna Goldfarb

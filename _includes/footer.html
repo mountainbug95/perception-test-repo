@@ -25,8 +25,8 @@
     <div class="bottom">
         {% if site.footer.bottom.blurb.enabled %}
             <div class="blurb">
-                {% if site.footer.bottom.blurb.img %}
-                    <img class="blurb-img" src="{{ site.footer.bottom.blurb.img | relative_url }}" alt="" />
+                {% if site.footer.bottom.blurb.displayBlurbImg %}
+                    <img class="blurb-img" src="{% if site.footer.bottom.blurb.img %}{{ site.footer.bottom.blurb.img | relative_url }}{% else %}{{ site.author.avatar | relative_url }}{% endif %}" alt="" />
                 {% endif %}
                 <div class="blurb-content">
                     {% if site.footer.bottom.blurb.description.heading %}

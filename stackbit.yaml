@@ -77,6 +77,11 @@ models:
                     label: Enabled
                     default: false
                     description: Displays the blurb section
+                  - type: boolean
+                    name: displayBlurbImg
+                    label: Display Blurb Image
+                    default: false
+                    description: Displays the blurb image
                   - type: image
                     name: img
                     label: Blurb Image

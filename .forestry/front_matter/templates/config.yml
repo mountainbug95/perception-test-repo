@@ -73,6 +73,11 @@ fields:
                 label: Enabled
                 description: Displays the blurb section
                 default: false
+              - type: boolean
+                name: displayBlurbImg
+                label: Display Blurb Image
+                description: Displays the blurb image
+                default: false
               - type: file
                 name: img
                 label: Blurb Image
